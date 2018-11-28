@@ -1,0 +1,10 @@
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\CyC.GestorDeContactos.AccesoDatos.dll.config
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\CyC.GestorDeContactos.AccesoDatos.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\CyC.GestorDeContactos.AccesoDatos.pdb
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\EntityFramework.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\EntityFramework.xml
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\obj\Debug\CyC.GestorDeContactos.AccesoDatos.csprojResolveAssemblyReference.cache
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\obj\Debug\CyC.GestorDeContactos.AccesoDatos.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\obj\Debug\CyC.GestorDeContactos.AccesoDatos.pdb

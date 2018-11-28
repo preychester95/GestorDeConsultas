@@ -1,0 +1,9 @@
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\CyC.GestorDeContactos.BLL.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\CyC.GestorDeContactos.BLL.pdb
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\obj\Debug\CyC.GestorDeContactos.BLL.csprojResolveAssemblyReference.cache
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\obj\Debug\CyC.GestorDeContactos.BLL.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\obj\Debug\CyC.GestorDeContactos.BLL.pdb
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\CyC.GestorDeContactos.AccesoDatos.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\EntityFramework.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\CyC.GestorDeContactos.AccesoDatos.pdb
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\EntityFramework.xml

@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CYC_PracticasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="UIDContacto" />
+          </Key>
+          <Property Name="UIDContacto" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UIDDireccion" Type="uniqueidentifier" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="75" />
+          <Property Name="Telefono" Type="numeric" Precision="15" Scale="0" />
+          <Property Name="Movil" Type="numeric" Precision="15" Scale="0" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="UIDDireccion" />
+          </Key>
+          <Property Name="UIDDireccion" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CP" Type="varchar" MaxLength="5" />
+          <Property Name="Localidad" Type="varchar" MaxLength="50" />
+          <Property Name="UIDProvincia" Type="uniqueidentifier" />
+          <Property Name="UIDPais" Type="uniqueidentifier" />
+          <Property Name="Telefono" Type="numeric" Precision="15" Scale="0" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="UIDPais" />
+          </Key>
+          <Property Name="UIDPais" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="3" />
+          <Property Name="Pais" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="UIDProvincia" />
+          </Key>
+          <Property Name="UIDProvincia" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="3" />
+          <Property Name="Provincia" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Contacto_Direccion">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
+          <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="UIDDireccion" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="UIDDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="UIDPais" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="UIDPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="UIDProvincia" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="UIDProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CYC_PracticasModelStoreContainer">
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contacto_Direccion" Association="Self.FK_Contacto_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Pais" Association="Self.FK_Direccion_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Provincia" Association="Self.FK_Direccion_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CYC_PracticasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="UIDContacto" />
+          </Key>
+          <Property Name="UIDContacto" Type="Guid" Nullable="false" />
+          <Property Name="UIDDireccion" Type="Guid" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="Movil" Type="Decimal" Precision="15" Scale="0" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_Contacto_Direccion" FromRole="Contacto" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="UIDDireccion" />
+          </Key>
+          <Property Name="UIDDireccion" Type="Guid" Nullable="false" />
+          <Property Name="CP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Localidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UIDProvincia" Type="Guid" />
+          <Property Name="UIDPais" Type="Guid" />
+          <Property Name="Telefono" Type="Decimal" Precision="15" Scale="0" />
+          <NavigationProperty Name="Contacto" Relationship="Self.FK_Contacto_Direccion" FromRole="Direccion" ToRole="Contacto" />
+          <NavigationProperty Name="Pais" Relationship="Self.FK_Direccion_Pais" FromRole="Direccion" ToRole="Pais" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Direccion_Provincia" FromRole="Direccion" ToRole="Provincia" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="UIDPais" />
+          </Key>
+          <Property Name="UIDPais" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Pais1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_Direccion_Pais" FromRole="Pais" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="UIDProvincia" />
+          </Key>
+          <Property Name="UIDProvincia" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_Direccion_Provincia" FromRole="Provincia" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Contacto_Direccion">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
+          <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="UIDDireccion" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="UIDDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="UIDPais" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="UIDPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="UIDProvincia" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="UIDProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CYC_PracticasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Contacto_Direccion" Association="Self.FK_Contacto_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Pais" Association="Self.FK_Direccion_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Provincia" Association="Self.FK_Direccion_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CYC_PracticasModelStoreContainer" CdmEntityContainer="CYC_PracticasEntities">
+          <EntitySetMapping Name="Contacto">
+            <EntityTypeMapping TypeName="CYC_PracticasModel.Contacto">
+              <MappingFragment StoreEntitySet="Contacto">
+                <ScalarProperty Name="UIDContacto" ColumnName="UIDContacto" />
+                <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="CYC_PracticasModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+                <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pais">
+            <EntityTypeMapping TypeName="CYC_PracticasModel.Pais">
+              <MappingFragment StoreEntitySet="Pais">
+                <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Pais1" ColumnName="Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincia">
+            <EntityTypeMapping TypeName="CYC_PracticasModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Provincia1" ColumnName="Provincia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CYC_PracticasModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
