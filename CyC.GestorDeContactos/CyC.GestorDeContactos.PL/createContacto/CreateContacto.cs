@@ -107,7 +107,7 @@ namespace CyC.GestorDeContactos.PL.createContacto
         private void returnToMainForm()
         {
             MessageBox.Show("Contacto guardado con éxito");
-            this.formPrincipal.refreshDataGridView();
+            this.formPrincipal.refreshDataGridView(null);
             this.Close();
         }
 

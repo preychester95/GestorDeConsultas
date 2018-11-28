@@ -8,3 +8,5 @@ C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.Acces
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\obj\Debug\CyC.GestorDeContactos.AccesoDatos.csprojResolveAssemblyReference.cache
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\obj\Debug\CyC.GestorDeContactos.AccesoDatos.dll
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\obj\Debug\CyC.GestorDeContactos.AccesoDatos.pdb
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\Cyc.GestorDeContactos.Comunes.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.AccesoDatos\bin\Debug\Cyc.GestorDeContactos.Comunes.pdb

@@ -1,11 +1,18 @@
-﻿using CyC.GestorDeContactos.AccesoDatos.DAL;
+﻿using Cyc.GestorDeContactos.Comunes;
+using CyC.GestorDeContactos.AccesoDatos.DAL;
 using CyC.GestorDeContactos.AccesoDatos.DTO;
 using System;
+using System.Collections.Generic;
 
 namespace CyC.GestorDeContactos.BLL.BLL
 {
     public static class ContactoBLL
     {
+        public static List<Contacto> getAllContactos()
+        {
+            return ContactoDAL.getAllContactos();
+        }
+
         public static void createPersona(Guid idContacto, string nombre)
         {
             Contacto nuevoContacto = new Contacto();
@@ -33,6 +40,11 @@ namespace CyC.GestorDeContactos.BLL.BLL
         public static void deleteContacto(Contacto contacto)
         {
             ContactoDAL.deleteContacto(contacto);
+        }
+
+        public static List<Contacto> applyFilter(Filter filtro)
+        {
+            return ContactoDAL.applyFilter(filtro);
         }
     }
 }

@@ -54,18 +54,20 @@
             this.nombre_textbox = new System.Windows.Forms.TextBox();
             this.nombre_label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.filtar_boton = new System.Windows.Forms.Button();
-            this.limpiar_boton = new System.Windows.Forms.Button();
-            this.nombreFilter_textbox = new System.Windows.Forms.TextBox();
-            this.emailFilter_textbox = new System.Windows.Forms.TextBox();
-            this.telefonoFilter_textbox = new System.Windows.Forms.TextBox();
-            this.movilFilter_textbox = new System.Windows.Forms.TextBox();
-            this.direccionFilter_textbox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.direccionFilter_textbox = new System.Windows.Forms.TextBox();
+            this.movilFilter_textbox = new System.Windows.Forms.TextBox();
+            this.telefonoFilter_textbox = new System.Windows.Forms.TextBox();
+            this.emailFilter_textbox = new System.Windows.Forms.TextBox();
+            this.nombreFilter_textbox = new System.Windows.Forms.TextBox();
+            this.limpiar_boton = new System.Windows.Forms.Button();
+            this.filtar_boton = new System.Windows.Forms.Button();
+            this.todosContactos_boton = new System.Windows.Forms.Button();
+            this.introducetxt_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cYC_PracticasDataSet1)).BeginInit();
@@ -312,92 +314,15 @@
             this.panel2.Size = new System.Drawing.Size(686, 125);
             this.panel2.TabIndex = 2;
             // 
-            // filtar_boton
+            // label6
             // 
-            this.filtar_boton.Location = new System.Drawing.Point(595, 88);
-            this.filtar_boton.Name = "filtar_boton";
-            this.filtar_boton.Size = new System.Drawing.Size(75, 23);
-            this.filtar_boton.TabIndex = 0;
-            this.filtar_boton.Text = "Filtrar";
-            this.filtar_boton.UseVisualStyleBackColor = true;
-            this.filtar_boton.Click += new System.EventHandler(this.filtar_boton_Click);
-            // 
-            // limpiar_boton
-            // 
-            this.limpiar_boton.Location = new System.Drawing.Point(505, 88);
-            this.limpiar_boton.Name = "limpiar_boton";
-            this.limpiar_boton.Size = new System.Drawing.Size(75, 23);
-            this.limpiar_boton.TabIndex = 1;
-            this.limpiar_boton.Text = "Limpiar";
-            this.limpiar_boton.UseVisualStyleBackColor = true;
-            this.limpiar_boton.Click += new System.EventHandler(this.limpiar_boton_Click);
-            // 
-            // nombreFilter_textbox
-            // 
-            this.nombreFilter_textbox.Location = new System.Drawing.Point(19, 43);
-            this.nombreFilter_textbox.Name = "nombreFilter_textbox";
-            this.nombreFilter_textbox.Size = new System.Drawing.Size(103, 20);
-            this.nombreFilter_textbox.TabIndex = 2;
-            // 
-            // emailFilter_textbox
-            // 
-            this.emailFilter_textbox.Location = new System.Drawing.Point(156, 43);
-            this.emailFilter_textbox.Name = "emailFilter_textbox";
-            this.emailFilter_textbox.Size = new System.Drawing.Size(103, 20);
-            this.emailFilter_textbox.TabIndex = 3;
-            // 
-            // telefonoFilter_textbox
-            // 
-            this.telefonoFilter_textbox.Location = new System.Drawing.Point(293, 43);
-            this.telefonoFilter_textbox.Name = "telefonoFilter_textbox";
-            this.telefonoFilter_textbox.Size = new System.Drawing.Size(103, 20);
-            this.telefonoFilter_textbox.TabIndex = 4;
-            this.telefonoFilter_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbers);
-            // 
-            // movilFilter_textbox
-            // 
-            this.movilFilter_textbox.Location = new System.Drawing.Point(430, 43);
-            this.movilFilter_textbox.Name = "movilFilter_textbox";
-            this.movilFilter_textbox.Size = new System.Drawing.Size(103, 20);
-            this.movilFilter_textbox.TabIndex = 5;
-            this.movilFilter_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbers);
-            // 
-            // direccionFilter_textbox
-            // 
-            this.direccionFilter_textbox.Location = new System.Drawing.Point(567, 43);
-            this.direccionFilter_textbox.Name = "direccionFilter_textbox";
-            this.direccionFilter_textbox.Size = new System.Drawing.Size(103, 20);
-            this.direccionFilter_textbox.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nombre";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(153, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Email";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(290, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Teléfono";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(564, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Dirección";
             // 
             // label5
             // 
@@ -409,28 +334,126 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Móvil";
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(564, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Dirección";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(290, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Teléfono";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(153, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Email";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Nombre";
+            // 
+            // direccionFilter_textbox
+            // 
+            this.direccionFilter_textbox.Location = new System.Drawing.Point(567, 43);
+            this.direccionFilter_textbox.Name = "direccionFilter_textbox";
+            this.direccionFilter_textbox.Size = new System.Drawing.Size(103, 20);
+            this.direccionFilter_textbox.TabIndex = 6;
+            // 
+            // movilFilter_textbox
+            // 
+            this.movilFilter_textbox.Location = new System.Drawing.Point(430, 43);
+            this.movilFilter_textbox.Name = "movilFilter_textbox";
+            this.movilFilter_textbox.Size = new System.Drawing.Size(103, 20);
+            this.movilFilter_textbox.TabIndex = 5;
+            this.movilFilter_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbers);
+            // 
+            // telefonoFilter_textbox
+            // 
+            this.telefonoFilter_textbox.Location = new System.Drawing.Point(293, 43);
+            this.telefonoFilter_textbox.Name = "telefonoFilter_textbox";
+            this.telefonoFilter_textbox.Size = new System.Drawing.Size(103, 20);
+            this.telefonoFilter_textbox.TabIndex = 4;
+            this.telefonoFilter_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOnlyNumbers);
+            // 
+            // emailFilter_textbox
+            // 
+            this.emailFilter_textbox.Location = new System.Drawing.Point(156, 43);
+            this.emailFilter_textbox.Name = "emailFilter_textbox";
+            this.emailFilter_textbox.Size = new System.Drawing.Size(103, 20);
+            this.emailFilter_textbox.TabIndex = 3;
+            // 
+            // nombreFilter_textbox
+            // 
+            this.nombreFilter_textbox.Location = new System.Drawing.Point(19, 43);
+            this.nombreFilter_textbox.Name = "nombreFilter_textbox";
+            this.nombreFilter_textbox.Size = new System.Drawing.Size(103, 20);
+            this.nombreFilter_textbox.TabIndex = 2;
+            // 
+            // limpiar_boton
+            // 
+            this.limpiar_boton.Location = new System.Drawing.Point(505, 88);
+            this.limpiar_boton.Name = "limpiar_boton";
+            this.limpiar_boton.Size = new System.Drawing.Size(75, 23);
+            this.limpiar_boton.TabIndex = 1;
+            this.limpiar_boton.Text = "Limpiar";
+            this.limpiar_boton.UseVisualStyleBackColor = true;
+            this.limpiar_boton.Click += new System.EventHandler(this.limpiar_boton_Click);
+            // 
+            // filtar_boton
+            // 
+            this.filtar_boton.Location = new System.Drawing.Point(595, 88);
+            this.filtar_boton.Name = "filtar_boton";
+            this.filtar_boton.Size = new System.Drawing.Size(75, 23);
+            this.filtar_boton.TabIndex = 0;
+            this.filtar_boton.Text = "Filtrar";
+            this.filtar_boton.UseVisualStyleBackColor = true;
+            this.filtar_boton.Click += new System.EventHandler(this.filtar_boton_Click);
+            // 
+            // todosContactos_boton
+            // 
+            this.todosContactos_boton.Location = new System.Drawing.Point(705, 181);
+            this.todosContactos_boton.Name = "todosContactos_boton";
+            this.todosContactos_boton.Size = new System.Drawing.Size(160, 23);
+            this.todosContactos_boton.TabIndex = 0;
+            this.todosContactos_boton.Text = "Mostrar todos los contactos";
+            this.todosContactos_boton.Click += new System.EventHandler(this.todosContactos_boton_Click);
+            // 
+            // introducetxt_label
+            // 
+            this.introducetxt_label.AutoSize = true;
+            this.introducetxt_label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.introducetxt_label.Location = new System.Drawing.Point(109, 13);
+            this.introducetxt_label.Name = "introducetxt_label";
+            this.introducetxt_label.Size = new System.Drawing.Size(306, 20);
+            this.introducetxt_label.TabIndex = 3;
+            this.introducetxt_label.Text = "Introduce los campos por los que quieras filtrar";
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 520);
+            this.Controls.Add(this.introducetxt_label);
+            this.Controls.Add(this.todosContactos_boton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataPanel);
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Gestor de contactos";
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).EndInit();
@@ -440,6 +463,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -482,6 +506,8 @@
         private System.Windows.Forms.TextBox telefonoFilter_textbox;
         private System.Windows.Forms.TextBox emailFilter_textbox;
         private System.Windows.Forms.TextBox nombreFilter_textbox;
+        private System.Windows.Forms.Button todosContactos_boton;
+        private System.Windows.Forms.Label introducetxt_label;
     }
 }
 

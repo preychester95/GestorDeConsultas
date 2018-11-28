@@ -1,7 +1,9 @@
-﻿using CyC.GestorDeContactos.AccesoDatos.DTO;
+﻿using Cyc.GestorDeContactos.Comunes;
+using CyC.GestorDeContactos.AccesoDatos.DTO;
 using CyC.GestorDeContactos.BLL.BFLL;
 using CyC.GestorDeContactos.PL.createContacto;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CyC.GestorDeContactos.PL
@@ -10,6 +12,7 @@ namespace CyC.GestorDeContactos.PL
     {
         ControllerBFLL mainController = new ControllerBFLL();
         Contacto selectedContacto;
+        List<Contacto> filteredContactos;
 
         public mainForm()
         {
@@ -41,7 +44,7 @@ namespace CyC.GestorDeContactos.PL
         private void borrar_boton_Click(object sender, EventArgs e)
         {
             mainController.deleteContacto(this.selectedContacto);
-            refreshDataGridView();
+            refreshDataGridView(null);
             initTextBox(0);
             MessageBox.Show("Contacto borrado correctamente");
         }
@@ -97,9 +100,18 @@ namespace CyC.GestorDeContactos.PL
             createContactoForm.ShowDialog();
         }
 
-        public void refreshDataGridView()
+        public void refreshDataGridView(List<Contacto> listadoContactos)
         {
-            this.contactoTableAdapter.Fill(this.cYC_PracticasDataSet1.Contacto);
+            if (listadoContactos == null)
+            {
+                filteredContactos = mainController.getAllContactos();
+                dataPanel.DataSource = filteredContactos;
+            }
+            else
+            {
+                dataPanel.DataSource = listadoContactos;
+            }
+
         }
 
         private void limpiar_boton_Click(object sender, EventArgs e)
@@ -109,6 +121,7 @@ namespace CyC.GestorDeContactos.PL
             telefonoFilter_textbox.Text = "";
             movilFilter_textbox.Text = "";
             direccionFilter_textbox.Text = "";
+            filteredContactos.Clear();
         }
 
         private void filtar_boton_Click(object sender, EventArgs e)
@@ -119,7 +132,14 @@ namespace CyC.GestorDeContactos.PL
             }
             else
             {
-
+                Filter filtro = new Filter();
+                filtro.nombre = nombreFilter_textbox.Text;
+                filtro.email = emailFilter_textbox.Text;
+                filtro.telefono = (String.IsNullOrEmpty(telefonoFilter_textbox.Text)) ? 0 : Int32.Parse(telefonoFilter_textbox.Text);
+                filtro.movil = (String.IsNullOrEmpty(movilFilter_textbox.Text)) ? 0 : Int32.Parse(movilFilter_textbox.Text);
+                filtro.direccion = direccionFilter_textbox.Text;
+                List<Contacto> filteredContactos = mainController.applyFilter(filtro);
+                refreshDataGridView(filteredContactos);
             }
         }
 
@@ -144,6 +164,12 @@ namespace CyC.GestorDeContactos.PL
                 e.Handled = true;
             }
         }
+
+        private void todosContactos_boton_Click(object sender, EventArgs e)
+        {
+            refreshDataGridView(null);
+        }
+
 
 
 

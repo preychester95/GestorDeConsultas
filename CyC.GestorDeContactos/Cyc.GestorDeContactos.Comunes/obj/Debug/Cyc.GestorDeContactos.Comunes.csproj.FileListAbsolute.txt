@@ -1,0 +1,5 @@
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\Cyc.GestorDeContactos.Comunes\bin\Debug\Cyc.GestorDeContactos.Comunes.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\Cyc.GestorDeContactos.Comunes\bin\Debug\Cyc.GestorDeContactos.Comunes.pdb
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\Cyc.GestorDeContactos.Comunes\obj\Debug\Cyc.GestorDeContactos.Comunes.csprojResolveAssemblyReference.cache
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\Cyc.GestorDeContactos.Comunes\obj\Debug\Cyc.GestorDeContactos.Comunes.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\Cyc.GestorDeContactos.Comunes\obj\Debug\Cyc.GestorDeContactos.Comunes.pdb

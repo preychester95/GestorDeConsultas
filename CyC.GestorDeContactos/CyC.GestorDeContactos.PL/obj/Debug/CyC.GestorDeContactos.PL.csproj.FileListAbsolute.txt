@@ -17,3 +17,5 @@ C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.PL\bi
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.PL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.PL\obj\Debug\CyC.GestorDeContactos.PL.createContacto.CreateContacto.resources
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.PL\obj\Debug\CyC.GestorDeContactos.PL.createDireccion.CreateDireccion.resources
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.PL\bin\Debug\Cyc.GestorDeContactos.Comunes.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.PL\bin\Debug\Cyc.GestorDeContactos.Comunes.pdb

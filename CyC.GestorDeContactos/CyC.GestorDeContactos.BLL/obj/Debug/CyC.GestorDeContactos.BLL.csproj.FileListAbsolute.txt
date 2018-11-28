@@ -7,3 +7,5 @@ C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\b
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\EntityFramework.dll
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\CyC.GestorDeContactos.AccesoDatos.pdb
 C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\EntityFramework.xml
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\Cyc.GestorDeContactos.Comunes.dll
+C:\Users\prc\Desktop\Proyectos\CyC.GestorDeContactos\CyC.GestorDeContactos.BLL\bin\Debug\Cyc.GestorDeContactos.Comunes.pdb

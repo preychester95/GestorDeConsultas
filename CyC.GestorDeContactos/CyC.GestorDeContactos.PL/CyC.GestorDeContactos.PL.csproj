@@ -143,6 +143,10 @@
       <Project>{37ab3bb3-940c-40e7-a492-a3bebe60e33b}</Project>
       <Name>CyC.GestorDeContactos.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cyc.GestorDeContactos.Comunes\Cyc.GestorDeContactos.Comunes.csproj">
+      <Project>{dd1e89fe-8f88-4da8-8f89-cceffe262247}</Project>
+      <Name>Cyc.GestorDeContactos.Comunes</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

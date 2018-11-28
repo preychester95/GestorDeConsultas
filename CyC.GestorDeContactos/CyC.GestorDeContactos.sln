@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyC.GestorDeContactos.BLL",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyC.GestorDeContactos.PL", "CyC.GestorDeContactos.PL\CyC.GestorDeContactos.PL.csproj", "{CBB4B1D8-0BD3-422B-92E8-BCF47DE2BF6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyc.GestorDeContactos.Comunes", "Cyc.GestorDeContactos.Comunes\Cyc.GestorDeContactos.Comunes.csproj", "{DD1E89FE-8F88-4DA8-8F89-CCEFFE262247}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CBB4B1D8-0BD3-422B-92E8-BCF47DE2BF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBB4B1D8-0BD3-422B-92E8-BCF47DE2BF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBB4B1D8-0BD3-422B-92E8-BCF47DE2BF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1E89FE-8F88-4DA8-8F89-CCEFFE262247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1E89FE-8F88-4DA8-8F89-CCEFFE262247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1E89FE-8F88-4DA8-8F89-CCEFFE262247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1E89FE-8F88-4DA8-8F89-CCEFFE262247}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
