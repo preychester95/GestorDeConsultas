@@ -71,26 +71,34 @@ namespace CyC.GestorDeContactos.PL.createContacto
         {
             this.selectedContacto.Nombre = nombre_textbox.Text;
             this.selectedContacto.Email = email_textbox.Text;
-            this.selectedContacto.Telefono = (String.IsNullOrEmpty(telefono_textbox.Text)) ? 0 : Int32.Parse(telefono_textbox.Text);
-            this.selectedContacto.Movil = (String.IsNullOrEmpty(movil_textbox.Text)) ? 0 : Int32.Parse(movil_textbox.Text);
+            this.selectedContacto.Telefono = (String.IsNullOrEmpty(telefono_textbox.Text)) ? 0 : long.Parse(telefono_textbox.Text);
+            this.selectedContacto.Movil = (String.IsNullOrEmpty(movil_textbox.Text)) ? 0 : long.Parse(movil_textbox.Text);
             if (validate())
             {
-                try
+                if (IsValidEmail(this.selectedContacto.Email))
                 {
-                    if (edit)
+                    try
                     {
-                        mainController.updateContacto(this.selectedContacto);
+                        if (edit)
+                        {
+                            mainController.updateContacto(this.selectedContacto);
+                        }
+                        else
+                        {
+                            mainController.createContacto(this.selectedContacto);
+                        }
+                        returnToMainForm();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        mainController.createContacto(this.selectedContacto);
+                        Console.Write(ex.ToString());
                     }
-                    returnToMainForm();
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.Write(ex.ToString());
+                    MessageBox.Show("Por favor, introduce un email válido");
                 }
+
             }
             else
             {
@@ -146,7 +154,18 @@ namespace CyC.GestorDeContactos.PL.createContacto
             createDireccionForm.ShowDialog();
         }
 
-        //TODO: validación para los emails
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 }

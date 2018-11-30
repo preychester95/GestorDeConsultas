@@ -12,7 +12,7 @@ namespace CyC.GestorDeContactos.PL
     {
         ControllerBFLL mainController = new ControllerBFLL();
         Contacto selectedContacto;
-        List<Contacto> filteredContactos;
+        List<Contacto> filteredContactos = new List<Contacto>();
 
         public mainForm()
         {

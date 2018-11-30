@@ -85,7 +85,7 @@ namespace CyC.GestorDeContactos.PL.createDireccion
         {
             selectedDireccion.CP = codigopostal_textbox.Text;
             selectedDireccion.Localidad = localidad_textbox.Text;
-            selectedDireccion.Telefono = (String.IsNullOrEmpty(telefono_textbox.Text)) ? 0 : Int32.Parse(telefono_textbox.Text);
+            selectedDireccion.Telefono = (String.IsNullOrEmpty(telefono_textbox.Text)) ? 0 : long.Parse(telefono_textbox.Text);
             if (validate())
             {
                 mainController.createDireccion(selectedDireccion);

@@ -84,6 +84,49 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="CreateContacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="numeric" Mode="In" />
+    <Parameter Name="Movil" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="CreateDireccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CP" Type="varchar" Mode="In" />
+    <Parameter Name="Localidad" Type="varchar" Mode="In" />
+    <Parameter Name="UIDProvincia" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="UIDPais" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Telefono" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="DeleteContactoById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetAllContactos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllDirecciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllProvincias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetContactoById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetDireccionById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetPaisById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDPais" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetProvinciaById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDProvincia" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="UpdateContactoById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="numeric" Mode="In" />
+    <Parameter Name="Movil" Type="numeric" Mode="In" />
+  </Function>
   <EntityContainer Name="CYC_PracticasModelStoreContainer">
     <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />

@@ -54,5 +54,93 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CreateContacto" FunctionName="CYC_PracticasModel.Store.CreateContacto" />
+    <FunctionImportMapping FunctionImportName="CreateDireccion" FunctionName="CYC_PracticasModel.Store.CreateDireccion" />
+    <FunctionImportMapping FunctionImportName="DeleteContactoById1" FunctionName="CYC_PracticasModel.Store.DeleteContactoById" />
+    <FunctionImportMapping FunctionImportName="GetAllContactos1" FunctionName="CYC_PracticasModel.Store.GetAllContactos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllContactos1_Result">
+          <ScalarProperty Name="UIDContacto" ColumnName="UIDContacto" />
+          <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllDirecciones" FunctionName="CYC_PracticasModel.Store.GetAllDirecciones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllDirecciones_Result">
+          <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+          <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllPaises" FunctionName="CYC_PracticasModel.Store.GetAllPaises">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllPaises_Result">
+          <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Pais1" ColumnName="Pais1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllProvincias" FunctionName="CYC_PracticasModel.Store.GetAllProvincias">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllProvincias_Result">
+          <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+          <ScalarProperty Name="Provincia1" ColumnName="Provincia1" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetContactoById1" FunctionName="CYC_PracticasModel.Store.GetContactoById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetContactoById1_Result">
+          <ScalarProperty Name="UIDContacto" ColumnName="UIDContacto" />
+          <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDireccionById" FunctionName="CYC_PracticasModel.Store.GetDireccionById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetDireccionById_Result">
+          <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+          <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPaisById" FunctionName="CYC_PracticasModel.Store.GetPaisById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetPaisById_Result">
+          <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Pais1" ColumnName="Pais1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProvinciaById" FunctionName="CYC_PracticasModel.Store.GetProvinciaById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CYC_PracticasModel.GetProvinciaById_Result">
+          <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+          <ScalarProperty Name="Provincia1" ColumnName="Provincia1" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateContactoById" FunctionName="CYC_PracticasModel.Store.UpdateContactoById" />
   </EntityContainerMapping>
 </Mapping>

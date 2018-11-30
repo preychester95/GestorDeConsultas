@@ -124,6 +124,7 @@
             // telefono_textbox
             // 
             this.telefono_textbox.Location = new System.Drawing.Point(134, 90);
+            this.telefono_textbox.MaxLength = 15;
             this.telefono_textbox.Name = "telefono_textbox";
             this.telefono_textbox.Size = new System.Drawing.Size(280, 20);
             this.telefono_textbox.TabIndex = 5;
@@ -142,6 +143,7 @@
             // localidad_textbox
             // 
             this.localidad_textbox.Location = new System.Drawing.Point(134, 57);
+            this.localidad_textbox.MaxLength = 50;
             this.localidad_textbox.Name = "localidad_textbox";
             this.localidad_textbox.Size = new System.Drawing.Size(280, 20);
             this.localidad_textbox.TabIndex = 3;
@@ -159,6 +161,7 @@
             // codigopostal_textbox
             // 
             this.codigopostal_textbox.Location = new System.Drawing.Point(134, 22);
+            this.codigopostal_textbox.MaxLength = 5;
             this.codigopostal_textbox.Name = "codigopostal_textbox";
             this.codigopostal_textbox.Size = new System.Drawing.Size(280, 20);
             this.codigopostal_textbox.TabIndex = 1;

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CYC_PracticasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CYC_PracticasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Contacto">
           <Key>
             <PropertyRef Name="UIDContacto" />
@@ -89,6 +89,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="CreateContacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="numeric" Mode="In" />
+          <Parameter Name="Movil" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="CreateDireccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CP" Type="varchar" Mode="In" />
+          <Parameter Name="Localidad" Type="varchar" Mode="In" />
+          <Parameter Name="UIDProvincia" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UIDPais" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Telefono" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="DeleteContactoById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetAllContactos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllDirecciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllProvincias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetContactoById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetDireccionById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetPaisById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDPais" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetProvinciaById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDProvincia" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="UpdateContactoById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UIDContacto" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UIDDireccion" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="numeric" Mode="In" />
+          <Parameter Name="Movil" Type="numeric" Mode="In" />
+        </Function>
         <EntityContainer Name="CYC_PracticasModelStoreContainer">
           <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
@@ -108,8 +151,7 @@
             <End Role="Direccion" EntitySet="Direccion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CYC_PracticasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -221,7 +263,141 @@
             <End Role="Provincia" EntitySet="Provincia" />
             <End Role="Direccion" EntitySet="Direccion" />
           </AssociationSet>
+          <FunctionImport Name="CrearContacto">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+            <Parameter Name="UIDDireccion" Mode="In" Type="Guid" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+            <Parameter Name="Movil" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="CrearDireccion">
+            <Parameter Name="UIDDireccion" Mode="In" Type="Guid" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Localidad" Mode="In" Type="String" />
+            <Parameter Name="UIDProvincia" Mode="In" Type="Guid" />
+            <Parameter Name="UIDPais" Mode="In" Type="Guid" />
+            <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteContactoById">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllContactos" ReturnType="Collection(CYC_PracticasModel.GetAllContactos_Result)" />
+          <FunctionImport Name="GetContactoById" ReturnType="Collection(CYC_PracticasModel.GetContactoById_Result)">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="CreateContacto">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+            <Parameter Name="UIDDireccion" Mode="In" Type="Guid" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+            <Parameter Name="Movil" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="CreateDireccion">
+            <Parameter Name="UIDDireccion" Mode="In" Type="Guid" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Localidad" Mode="In" Type="String" />
+            <Parameter Name="UIDProvincia" Mode="In" Type="Guid" />
+            <Parameter Name="UIDPais" Mode="In" Type="Guid" />
+            <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteContactoById1">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllContactos1" ReturnType="Collection(CYC_PracticasModel.GetAllContactos1_Result)" />
+          <FunctionImport Name="GetAllDirecciones" ReturnType="Collection(CYC_PracticasModel.GetAllDirecciones_Result)" />
+          <FunctionImport Name="GetAllPaises" ReturnType="Collection(CYC_PracticasModel.GetAllPaises_Result)" />
+          <FunctionImport Name="GetAllProvincias" ReturnType="Collection(CYC_PracticasModel.GetAllProvincias_Result)" />
+          <FunctionImport Name="GetContactoById1" ReturnType="Collection(CYC_PracticasModel.GetContactoById1_Result)">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetDireccionById" ReturnType="Collection(CYC_PracticasModel.GetDireccionById_Result)">
+            <Parameter Name="UIDDireccion" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetPaisById" ReturnType="Collection(CYC_PracticasModel.GetPaisById_Result)">
+            <Parameter Name="UIDPais" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetProvinciaById" ReturnType="Collection(CYC_PracticasModel.GetProvinciaById_Result)">
+            <Parameter Name="UIDProvincia" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateContactoById">
+            <Parameter Name="UIDContacto" Mode="In" Type="Guid" />
+            <Parameter Name="UIDDireccion" Mode="In" Type="Guid" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+            <Parameter Name="Movil" Mode="In" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="GetAllContactos_Result">
+          <Property Type="Guid" Name="UIDContacto" Nullable="false" />
+          <Property Type="Guid" Name="UIDDireccion" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="75" />
+          <Property Type="Decimal" Name="Telefono" Nullable="true" Precision="15" Scale="0" />
+          <Property Type="Decimal" Name="Movil" Nullable="true" Precision="15" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetContactoById_Result">
+          <Property Type="Guid" Name="UIDContacto" Nullable="false" />
+          <Property Type="Guid" Name="UIDDireccion" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="75" />
+          <Property Type="Decimal" Name="Telefono" Nullable="true" Precision="15" Scale="0" />
+          <Property Type="Decimal" Name="Movil" Nullable="true" Precision="15" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAllContactos1_Result">
+          <Property Type="Guid" Name="UIDContacto" Nullable="false" />
+          <Property Type="Guid" Name="UIDDireccion" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="75" />
+          <Property Type="Decimal" Name="Telefono" Nullable="true" Precision="15" Scale="0" />
+          <Property Type="Decimal" Name="Movil" Nullable="true" Precision="15" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAllDirecciones_Result">
+          <Property Type="Guid" Name="UIDDireccion" Nullable="false" />
+          <Property Type="String" Name="CP" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Localidad" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="UIDProvincia" Nullable="true" />
+          <Property Type="Guid" Name="UIDPais" Nullable="true" />
+          <Property Type="Decimal" Name="Telefono" Nullable="true" Precision="15" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAllPaises_Result">
+          <Property Type="Guid" Name="UIDPais" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Pais1" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="GetAllProvincias_Result">
+          <Property Type="Guid" Name="UIDProvincia" Nullable="false" />
+          <Property Type="String" Name="Provincia1" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="3" />
+        </ComplexType>
+        <ComplexType Name="GetContactoById1_Result">
+          <Property Type="Guid" Name="UIDContacto" Nullable="false" />
+          <Property Type="Guid" Name="UIDDireccion" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="75" />
+          <Property Type="Decimal" Name="Telefono" Nullable="true" Precision="15" Scale="0" />
+          <Property Type="Decimal" Name="Movil" Nullable="true" Precision="15" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetDireccionById_Result">
+          <Property Type="Guid" Name="UIDDireccion" Nullable="false" />
+          <Property Type="String" Name="CP" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Localidad" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="UIDProvincia" Nullable="true" />
+          <Property Type="Guid" Name="UIDPais" Nullable="true" />
+          <Property Type="Decimal" Name="Telefono" Nullable="true" Precision="15" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetPaisById_Result">
+          <Property Type="Guid" Name="UIDPais" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Pais1" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="GetProvinciaById_Result">
+          <Property Type="Guid" Name="UIDProvincia" Nullable="false" />
+          <Property Type="String" Name="Provincia1" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="3" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -281,6 +457,94 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CreateContacto" FunctionName="CYC_PracticasModel.Store.CreateContacto" />
+          <FunctionImportMapping FunctionImportName="CreateDireccion" FunctionName="CYC_PracticasModel.Store.CreateDireccion" />
+          <FunctionImportMapping FunctionImportName="DeleteContactoById1" FunctionName="CYC_PracticasModel.Store.DeleteContactoById" />
+          <FunctionImportMapping FunctionImportName="GetAllContactos1" FunctionName="CYC_PracticasModel.Store.GetAllContactos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllContactos1_Result">
+                <ScalarProperty Name="UIDContacto" ColumnName="UIDContacto" />
+                <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllDirecciones" FunctionName="CYC_PracticasModel.Store.GetAllDirecciones">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllDirecciones_Result">
+                <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+                <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllPaises" FunctionName="CYC_PracticasModel.Store.GetAllPaises">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllPaises_Result">
+                <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Pais1" ColumnName="Pais1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllProvincias" FunctionName="CYC_PracticasModel.Store.GetAllProvincias">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetAllProvincias_Result">
+                <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+                <ScalarProperty Name="Provincia1" ColumnName="Provincia1" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetContactoById1" FunctionName="CYC_PracticasModel.Store.GetContactoById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetContactoById1_Result">
+                <ScalarProperty Name="UIDContacto" ColumnName="UIDContacto" />
+                <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetDireccionById" FunctionName="CYC_PracticasModel.Store.GetDireccionById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetDireccionById_Result">
+                <ScalarProperty Name="UIDDireccion" ColumnName="UIDDireccion" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+                <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPaisById" FunctionName="CYC_PracticasModel.Store.GetPaisById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetPaisById_Result">
+                <ScalarProperty Name="UIDPais" ColumnName="UIDPais" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Pais1" ColumnName="Pais1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProvinciaById" FunctionName="CYC_PracticasModel.Store.GetProvinciaById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CYC_PracticasModel.GetProvinciaById_Result">
+                <ScalarProperty Name="UIDProvincia" ColumnName="UIDProvincia" />
+                <ScalarProperty Name="Provincia1" ColumnName="Provincia1" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateContactoById" FunctionName="CYC_PracticasModel.Store.UpdateContactoById" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
