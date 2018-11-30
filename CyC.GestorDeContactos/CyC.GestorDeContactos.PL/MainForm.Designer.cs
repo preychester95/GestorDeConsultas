@@ -156,7 +156,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.crear_boton);
             this.panel1.Controls.Add(this.borrar_boton);
             this.panel1.Controls.Add(this.actualizar_boton);
             this.panel1.Controls.Add(this.direccion_textbox);
@@ -176,7 +175,7 @@
             // 
             // crear_boton
             // 
-            this.crear_boton.Location = new System.Drawing.Point(17, 158);
+            this.crear_boton.Location = new System.Drawing.Point(753, 181);
             this.crear_boton.Name = "crear_boton";
             this.crear_boton.Size = new System.Drawing.Size(112, 23);
             this.crear_boton.TabIndex = 2;
@@ -423,7 +422,7 @@
             // 
             // todosContactos_boton
             // 
-            this.todosContactos_boton.Location = new System.Drawing.Point(705, 181);
+            this.todosContactos_boton.Location = new System.Drawing.Point(587, 181);
             this.todosContactos_boton.Name = "todosContactos_boton";
             this.todosContactos_boton.Size = new System.Drawing.Size(160, 23);
             this.todosContactos_boton.TabIndex = 0;
@@ -445,6 +444,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 520);
+            this.Controls.Add(this.crear_boton);
             this.Controls.Add(this.introducetxt_label);
             this.Controls.Add(this.todosContactos_boton);
             this.Controls.Add(this.panel2);

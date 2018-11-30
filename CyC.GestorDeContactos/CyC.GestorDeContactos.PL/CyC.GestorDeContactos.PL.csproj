@@ -63,11 +63,6 @@
     <Compile Include="createDireccion\CreateDireccion.Designer.cs">
       <DependentUpon>CreateDireccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="CYC_PracticasDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CYC_PracticasDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="CYC_PracticasDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,17 +94,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CYC_PracticasDataSet.xsc">
-      <DependentUpon>CYC_PracticasDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CYC_PracticasDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CYC_PracticasDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CYC_PracticasDataSet.xss">
-      <DependentUpon>CYC_PracticasDataSet.xsd</DependentUpon>
-    </None>
     <None Include="CYC_PracticasDataSet1.xsc">
       <DependentUpon>CYC_PracticasDataSet1.xsd</DependentUpon>
     </None>
