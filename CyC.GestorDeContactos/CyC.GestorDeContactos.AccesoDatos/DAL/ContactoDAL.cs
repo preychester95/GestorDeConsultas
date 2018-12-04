@@ -22,6 +22,10 @@ namespace CyC.GestorDeContactos.AccesoDatos.DAL
 
                     //Llamada a procedimientos almacenados
                     result = db.Database.SqlQuery<Contacto>("exec GetAllContactos").ToList<Contacto>();
+                    foreach (Contacto contacto in result)
+                    {
+                        contacto.Direccion = DireccionDAL.getDireccionByGuid((Guid)contacto.UIDDireccion);
+                    }
                 }
                 return result;
             }
@@ -158,22 +162,39 @@ namespace CyC.GestorDeContactos.AccesoDatos.DAL
                 List<Contacto> result = new List<Contacto>();
                 using (CYC_PracticasEntities db = new CYC_PracticasEntities())
                 {
+                    //Llamada directa contra BBDD
+                    //if (filtro != null)
+                    //{
+                    //    var query = db.Contacto.AsQueryable();
+                    //    if (!String.IsNullOrEmpty(filtro.nombre))
+                    //        query = query.Where(x => x.Nombre == filtro.nombre);
+                    //    if (!String.IsNullOrEmpty(filtro.email))
+                    //        query = query.Where(x => x.Email == filtro.email);
+                    //    if (filtro.telefono != 0)
+                    //        query = query.Where(x => x.Telefono == filtro.telefono);
+                    //    if (filtro.movil != 0)
+                    //        query = query.Where(x => x.Movil == filtro.movil);
+                    //    result = query.ToList();
+                    //    if (!String.IsNullOrEmpty(filtro.direccion))
+                    //    {
+                    //        result = getResultByDireccion(filtro.direccion, result);
+                    //    }
+                    //}
+
+                    //Llamada a procedimientos almacenados
+                    result = getAllContactos();
                     if (filtro != null)
                     {
-                        var query = db.Contacto.AsQueryable();
                         if (!String.IsNullOrEmpty(filtro.nombre))
-                            query = query.Where(x => x.Nombre == filtro.nombre);
+                            result = result.Where(x => x.Nombre == filtro.nombre).ToList();
                         if (!String.IsNullOrEmpty(filtro.email))
-                            query = query.Where(x => x.Email == filtro.email);
+                            result = result.Where(x => x.Email == filtro.email).ToList();
                         if (filtro.telefono != 0)
-                            query = query.Where(x => x.Telefono == filtro.telefono);
+                            result = result.Where(x => x.Telefono == filtro.telefono).ToList();
                         if (filtro.movil != 0)
-                            query = query.Where(x => x.Movil == filtro.movil);
-                        result = query.ToList();
+                            result = result.Where(x => x.Movil == filtro.movil).ToList();
                         if (!String.IsNullOrEmpty(filtro.direccion))
-                        {
-                            result = getResultByDireccion(filtro.direccion, result);
-                        }
+                            result = result.Where(x => x.Direccion.FullName.Contains(filtro.direccion)).ToList();
                     }
                 }
                 return result;
